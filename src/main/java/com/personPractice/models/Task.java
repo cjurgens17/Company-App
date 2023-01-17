@@ -1,9 +1,6 @@
 package com.personPractice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Task {
@@ -13,6 +10,8 @@ public class Task {
     private Long id;
 
     private String title;
+
+    @Lob
     private String description;
 
     public Long getId() {

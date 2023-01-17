@@ -1,0 +1,11 @@
+package com.personPractice.services;
+
+import com.personPractice.models.Task;
+
+import java.util.List;
+import java.util.Set;
+
+public interface TaskService {
+
+    List<Task> getTasks();
+}
