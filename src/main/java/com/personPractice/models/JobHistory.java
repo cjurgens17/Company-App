@@ -3,17 +3,13 @@ package com.personPractice.models;
 import jakarta.persistence.*;
 
 import java.util.Date;
-@Entity
+@Embeddable
 public class JobHistory {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private Date startDate;
     private Date endDate;
 
-    @OneToOne
-    private Job job;
+
 
     public Date getStartDate() {
         return startDate;
@@ -31,11 +27,4 @@ public class JobHistory {
         this.endDate = endDate;
     }
 
-    public Job getJob() {
-        return job;
-    }
-
-    public void setJob(Job job) {
-        this.job = job;
-    }
 }

@@ -26,6 +26,9 @@ public class Employee {
     @OneToOne
     private Job job;
 
+    @Embedded
+    private JobHistory jobHistory;
+
     public Long getId() {
         return id;
     }
@@ -104,5 +107,13 @@ public class Employee {
 
     public void setJob(Job job) {
         this.job = job;
+    }
+
+    public JobHistory getJobHistory() {
+        return jobHistory;
+    }
+
+    public void setJobHistory(JobHistory jobHistory) {
+        this.jobHistory = jobHistory;
     }
 }

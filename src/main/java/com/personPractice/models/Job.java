@@ -15,8 +15,8 @@ public class Job {
     private String jobTitle;
     private Long minSalary;
     private Long maxSalary;
-    @OneToOne
-    private JobHistory jobHistory;
+
+
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Task> tasks = new HashSet<>();
@@ -54,14 +54,6 @@ public class Job {
 
     public void setMaxSalary(Long maxSalary) {
         this.maxSalary = maxSalary;
-    }
-
-    public JobHistory getJobHistory() {
-        return jobHistory;
-    }
-
-    public void setJobHistory(JobHistory jobHistory) {
-        this.jobHistory = jobHistory;
     }
 
     public Set<Task> getTasks() {
