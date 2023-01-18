@@ -4,25 +4,13 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tasks")
-public class Task {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Task extends BaseEntity{
 
     private String title;
 
     @Lob
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    
     public String getTitle() {
         return title;
     }

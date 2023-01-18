@@ -8,12 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "departments")
-public class Department {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Department extends BaseEntity{
 
     private String departmentName;
 
@@ -22,14 +17,6 @@ public class Department {
 
     @OneToOne
     private Location location;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDepartmentName() {
         return departmentName;
