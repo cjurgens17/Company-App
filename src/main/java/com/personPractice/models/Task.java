@@ -10,7 +10,7 @@ public class Task extends BaseEntity{
 
     @Lob
     private String description;
-    
+
     public String getTitle() {
         return title;
     }

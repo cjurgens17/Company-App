@@ -26,6 +26,8 @@ public class Employee extends BaseEntity {
     @Embedded
     private JobHistory jobHistory;
 
+    @Enumerated(value = EnumType.STRING)
+    private State state;
     public String getFirstName() {
         return firstName;
     }
@@ -104,5 +106,13 @@ public class Employee extends BaseEntity {
 
     public void setJobHistory(JobHistory jobHistory) {
         this.jobHistory = jobHistory;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 }
