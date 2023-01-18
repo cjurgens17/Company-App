@@ -41,7 +41,6 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         tasks.add(makeRepos);
 
         Task makeControllers = new Task();
-
         makeControllers.setTitle("Spring Boot Create Controllers");
         makeControllers.setDescription("Spring Boot controllers are important because they provide a way to handle HTTP requests and map them to appropriate methods in the application's code. \n"+
                 "They act as the bridge between the incoming request and the application's business logic, handling user input, interacting with the model, and returning a response to the client. \n"+
@@ -59,6 +58,19 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
                 "Overall, Spring Boot models are a key component of the application's architecture, allowing for a clean separation of concerns and making it easy to test and maintain the codebase.");
 
         tasks.add(makeModels);
+
+        Task makeServices = new Task();
+        makeServices.setDescription("Services are a very important part of developing and, especially in spring thayt are a core component to the framework. \n"+
+                "Using mcriservices can be a great way to plan and implement different services in Spring Boot. \n"+
+                "An example can involve the business of a Laundry Mat, and all the other services they offer. They have a point of sales service for processing payments. \n"+
+                "They have a customer service department, a laundry service, and and operation service for their machines. Of course there are many more services, but these are some of the common ones! \n"+
+                "Building an application in such a way that accounts for these services being developed at different times is how services work in Spring Boot and one of the many reasons why its so powerful.");
+
+        makeServices.setTitle("Spring Boot Create Services");
+
+        tasks.add(makeServices);
+
+
 
         return tasks;
     }
