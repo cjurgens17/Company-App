@@ -9,8 +9,13 @@ import java.util.Set;
 @Table(name = "jobs")
 public class Job extends BaseEntity{
 
+    @Column(name = "job_title")
     private String jobTitle;
+
+    @Column(name = "min_salary")
     private Long minSalary;
+
+    @Column(name = "max_salary")
     private Long maxSalary;
 
 

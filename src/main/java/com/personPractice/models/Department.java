@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "departments")
 public class Department extends BaseEntity{
 
+    @Column(name = "department_name")
     private String departmentName;
 
     @OneToMany(mappedBy = "department")

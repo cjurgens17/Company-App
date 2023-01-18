@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "regions")
 public class Region extends BaseEntity{
 
+    @Column(name = "region_name")
     private String regionName;
 
     @OneToOne

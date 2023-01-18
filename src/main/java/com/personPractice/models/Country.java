@@ -6,8 +6,9 @@ import jakarta.persistence.*;
 @Table(name = "countries")
 public class Country extends BaseEntity {
 
-
+    @Column(name = "country_name")
     private String countryName;
+
     @OneToOne
     private Location location;
 

@@ -6,9 +6,16 @@ import jakarta.persistence.*;
 @Table(name = "locations")
 public class Location extends BaseEntity{
 
+    @Column(name = "street_address")
     private String streetAddress;
+
+    @Column(name = "postal_code")
     private String postalCode;
+
+    @Column(name = "city")
     private String city;
+
+    @Column(name = "state_province")
     private String stateProvince;
 
     @OneToOne
