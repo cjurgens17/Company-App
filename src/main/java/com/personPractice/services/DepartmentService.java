@@ -4,7 +4,7 @@ import com.personPractice.models.Department;
 
 import java.util.List;
 
-public interface DepartmentService {
+public interface DepartmentService extends CrudService<Department, Long>{
 
     List<Department> getDepartments();
 }

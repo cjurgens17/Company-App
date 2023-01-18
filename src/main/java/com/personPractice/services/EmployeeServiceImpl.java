@@ -26,4 +26,33 @@ public class EmployeeServiceImpl  implements EmployeeService{
         return employeeList;
     }
 
+    @Override
+    public Set<Employee> findAll() {
+
+        Set<Employee> employees = new HashSet<>();
+
+        employeeRepository.findAll().forEach(employees::add);
+
+        return employees;
+    }
+
+    @Override
+    public Employee findById(Long aLong) {
+        return employeeRepository.findById(aLong).orElse(null);
+    }
+
+    @Override
+    public Employee save(Employee object) {
+        return employeeRepository.save(object);
+    }
+
+    @Override
+    public void delete(Employee object) {
+        employeeRepository.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        employeeRepository.deleteById(aLong);
+    }
 }

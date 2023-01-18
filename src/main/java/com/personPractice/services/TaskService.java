@@ -5,7 +5,7 @@ import com.personPractice.models.Task;
 import java.util.List;
 import java.util.Set;
 
-public interface TaskService {
+public interface TaskService extends CrudService<Task,Long>{
 
     List<Task> getTasks();
 }

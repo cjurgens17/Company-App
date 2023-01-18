@@ -3,6 +3,7 @@ package com.personPractice.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "regions")
 public class Region {
 
     @Id

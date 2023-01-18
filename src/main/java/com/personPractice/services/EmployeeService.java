@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 
-public interface EmployeeService {
+public interface EmployeeService extends CrudService<Employee,Long>{
 
     List<Employee> getEmployees();
 }
