@@ -1,7 +1,10 @@
-package com.person.personPractice;
+package com.personPractice;
+
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+
 
 @SpringBootTest
 class PersonPracticeApplicationTests {
