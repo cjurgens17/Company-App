@@ -6,6 +6,6 @@ INSERT INTO employees (first_Name, last_Name, salary) VALUES ('Ronald', 'Reagan'
 INSERT INTO employees (first_Name, last_Name, salary) VALUES ('Mike', 'Johnson', 200000)
 INSERT INTO departments (department_Name) VALUES ('Marketing')
 INSERT INTO departments (department_Name) VALUES ('Finance')
-INSERT INTO departments (department_Name) VALUES ('Software Engineers')
+INSERT INTO departments (department_Name) VALUES ('Software Engineering')
 INSERT INTO departments (department_Name) VALUES ('Cyber Security')
 INSERT INTO departments (department_Name) VALUES ('Operations Management')

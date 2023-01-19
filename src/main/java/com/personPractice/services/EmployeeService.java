@@ -11,4 +11,5 @@ import java.util.Set;
 public interface EmployeeService extends CrudService<Employee,Long>{
 
     List<Employee> getEmployees();
+
 }
