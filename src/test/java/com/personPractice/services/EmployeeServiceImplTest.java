@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -34,8 +35,21 @@ class EmployeeServiceImplTest {
         employee.setId(1L);
     }
 
-    @Disabled
+    @Test
     void getEmployees() {
+        List<Employee> employees = employeeService.getEmployees();
+        Employee emp1 = new Employee();
+        Employee emp2 = new Employee();
+        emp1.setId(1L);
+        emp2.setId(2L);
+        employees.add(emp1);
+        employees.add(emp2);
+
+        when(employeeRepository.findAll()).thenReturn(employees);
+        List<Employee> isEmployees = employeeService.getEmployees();
+
+        assertNotNull(isEmployees);
+        assertEquals(2,employees.size());
     }
 
     @Test

@@ -37,15 +37,18 @@ class DepartmentServiceImplTest {
     }
 
     @Test
-    @Disabled
     void getDepartments() {
 
-        List<Department> departments = new ArrayList<>();
+        List<Department> departments = departmentService.getDepartments();
+        Department dep1 = new Department();
+        Department dep2 = new Department();
+        dep1.setId(1L);
+        dep2.setId(2L);
+        departments.add(dep1);
+        departments.add(dep2);
 
-        departments.add(new Department());
-        departments.add(new Department());
 
-        when(departmentService.getDepartments()).thenReturn(departments);
+        when(departmentRepository.findAll()).thenReturn(departments);
         List<Department> departmentList = departmentService.getDepartments();
 
         assertNotNull(departmentList);
