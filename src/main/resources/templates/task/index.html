@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  data-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta charset="UTF-8">
     <title>List of Tasks</title>
+    <nav>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+        <ul>
+            <li><strong>The Wiser Company</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+    </nav>
 </head>
-<body>
-<h1>All Tasks</h1>
-
-<table>
+<body class="container">
+<article data-theme="light">
+    <h1 align="center">Tasks</h1>
+</article>
+<table role="grid">
+    <thead>
     <tr>
-        <th>Id</th>
-        <th>Task Name</th>
-        <th>Task Description</th>
+        <th scope="col">ID</th>
+        <th scope="col">Task</th>
+        <th scope="col">Description</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="task : ${tasks}">
-        <td th:text="${task.id}"></td>
+        <th scope="row" th:text="${task.id}">ID</th>
         <td th:text="${task.title}"></td>
         <td th:text="${task.description}"></td>
-        <td>
-            <a href="#" th:href="@{'/tasks/show/'+ ${task.id}}">View</a>
-        </td>
+        <td><a href="#" th:href="@{'/tasks/show/'+ ${task.id}}">View</a></td>
     </tr>
+    </tbody>
 </table>
+
 </body>
 </html>

@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  data-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta charset="UTF-8">
     <title>List of Employees</title>
+    <nav>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+        <ul>
+            <li><strong>The Wiser Company</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+    </nav>
 </head>
-<body>
-<h1>Employees</h1>
-
-<table>
+<body class="container">
+<article data-theme="light">
+    <h1 align="center">Employees</h1>
+</article>
+<table role="grid">
+    <thead>
     <tr>
-        <th>Id</th>
-        <th>First Name</th>
-        <th>Last name</th>
-        <th>Salary</th>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Salary</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="employee : ${employees}">
-        <td th:text="${employee.id}"></td>
+        <th scope="row" th:text="${employee.id}">ID</th>
         <td th:text="${employee.firstName}"></td>
         <td th:text="${employee.lastName}"></td>
         <td th:text="${employee.salary}"></td>
         <td><a href="#" th:href="@{'/employees/show/'+ ${employee.id}}">View</a></td>
     </tr>
+    </tbody>
 </table>
+
 </body>
 </html>
