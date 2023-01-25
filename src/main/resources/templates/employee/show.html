@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  data-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta charset="UTF-8">
     <title>Employee By Id</title>
+    <nav>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+        <ul>
+            <li><strong>The Wiser Company</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+    </nav>
 </head>
-<body>
-<table>
+<body class="container">
+<article data-theme="light">
+    <h1 align="center" th:text="|${employee.firstName} ${employee.lastName}|">Employee FirstName</h1>
+</article>
+<table role="grid">
+    <thead>
     <tr>
-        <th>Employee ID</th>
-        <th>Employee First Name</th>
-        <th>Employee Last Name</th>
-        <th>Employee Salary</th>
-        <th>Employee Department</th>
-        <th>Employee Email</th>
+        <th scope="col">Salary</th>
     </tr>
-    <tr>
-        <td th:text="${employee.id}">1</td>
-        <td th:text="${employee.firstName}">Mike</td>
-        <td th:text="${employee.lastName}">Burgundy</td>
-        <td th:text="${employee.salary}">100_000</td>
+    </thead>
+    <tbody>
+        <td th:text="${#numbers.formatCurrency(employee.salary)}"></td>
     </tr>
+    </tbody>
 </table>
+
 </body>
 </html>

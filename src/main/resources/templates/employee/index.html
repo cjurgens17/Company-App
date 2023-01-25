@@ -34,7 +34,7 @@
         <th scope="row" th:text="${employee.id}">ID</th>
         <td th:text="${employee.firstName}"></td>
         <td th:text="${employee.lastName}"></td>
-        <td th:text="${employee.salary}"></td>
+        <td th:text="${#numbers.formatCurrency(employee.salary)}"></td>
         <td><a href="#" th:href="@{'/employees/show/'+ ${employee.id}}">View</a></td>
     </tr>
     </tbody>
