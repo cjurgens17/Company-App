@@ -1,12 +1,20 @@
 package com.personPractice.bootstrap;
 
 
+import com.personPractice.models.Department;
+import com.personPractice.models.Employee;
 import com.personPractice.models.Task;
+import com.personPractice.repository.EmployeeRepository;
 import com.personPractice.repository.TaskRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,14 +22,27 @@ import java.util.Set;
 public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
 
     private final TaskRepository taskRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public DataLoad(TaskRepository taskRepository) {
+    public DataLoad(TaskRepository taskRepository, EmployeeRepository employeeRepository) {
         this.taskRepository = taskRepository;
+        this.employeeRepository = employeeRepository;
+    }
+
+    private Set<Department> departments = new HashSet<>();
+
+    public Set<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Set<Department> departments) {
+        this.departments = departments;
     }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
             taskRepository.saveAll(getTasks());
+            employeeRepository.saveAll(getEmployees());
     }
 
     private Set<Task> getTasks(){
@@ -74,6 +95,58 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
 
 
         return tasks;
+    }
+
+    private Set<Employee> getEmployees(){
+        //add data for bootstrap employees load up
+        Set<Employee> employees = new HashSet<>();
+
+        Department department = new Department();
+        department.setId(1L);
+        department.setDepartmentName("Software");
+        getDepartments().add(department);
+
+        Employee employee1 = new Employee();
+        employee1.setFirstName("Christopher");
+        employee1.setLastName("Walken");
+        employee1.setId(1L);
+        employee1.setSalary(100_000L);
+        employee1.setDepartment(department);
+        employee1.setEmail("CWalken@yahoo.com");
+
+        employees.add(employee1);
+
+        Department department2 = new Department();
+        department2.setId(2L);
+        department2.setDepartmentName("Maintenance");
+        getDepartments().add(department2);
+
+        Employee employee2 = new Employee();
+        employee2.setFirstName("Mike");
+        employee2.setLastName("Wazowski");
+        employee2.setId(2L);
+        employee2.setSalary(150_000L);
+        employee2.setDepartment(department2);
+        employee2.setEmail("AIncMonster@yahoo.com");
+
+        employees.add(employee2);
+
+        Department department3 = new Department();
+        department3.setId(3L);
+        department3.setDepartmentName("Customer Service");
+        getDepartments().add(department3);
+
+        Employee employee3 = new Employee();
+        employee3.setFirstName("Brett");
+        employee3.setLastName("Johnson");
+        employee3.setId(3L);
+        employee3.setSalary(200_000L);
+        employee3.setDepartment(department3);
+        employee3.setEmail("IsYourNetworkSecure@yahoo.com");
+
+        employees.add(employee3);
+
+        return employees;
     }
 
 
