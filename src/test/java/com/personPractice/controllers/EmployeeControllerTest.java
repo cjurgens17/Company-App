@@ -5,9 +5,13 @@ import com.personPractice.controllers.EmployeeController;
 import com.personPractice.models.Employee;
 import com.personPractice.services.EmployeeService;
 import org.junit.Before;
+import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;
@@ -15,6 +19,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 public class EmployeeControllerTest {
     @Mock
@@ -54,5 +60,20 @@ public class EmployeeControllerTest {
         verify(model,times(1)).addAttribute(eq("employees"),argumentCaptor.capture());
         List<Employee> listInEmployeeController = argumentCaptor.getValue();
         assertEquals(2,listInEmployeeController.size());
+    }
+
+    @Test
+    public void findById() throws Exception {
+
+        Employee employee = new Employee();
+        employee.setId(1L);
+
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(employeeController).build();
+
+        when(employeeService.findById(anyLong())).thenReturn(employee);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/employees/show/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("employee/show"));
     }
 }

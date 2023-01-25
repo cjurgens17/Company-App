@@ -19,6 +19,7 @@
         <td th:text="${employee.firstName}"></td>
         <td th:text="${employee.lastName}"></td>
         <td th:text="${employee.salary}"></td>
+        <td><a href="#" th:href="@{'/employees/show/'+ ${employee.id}}">View</a></td>
     </tr>
 </table>
 </body>

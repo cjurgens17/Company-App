@@ -6,6 +6,7 @@ import com.personPractice.repository.EmployeeRepository;
 import com.personPractice.services.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Set;
@@ -26,5 +27,11 @@ public class EmployeeController {
         model.addAttribute("employees", employeeService.getEmployees());
 
         return "employee/index";
+    }
+    @RequestMapping({"/show/{id}"})
+    public String findById(@PathVariable String id, Model model){
+        model.addAttribute("employee",employeeService.findById(Long.valueOf(id)));
+
+        return "employee/show";
     }
 }
