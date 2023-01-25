@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html  data-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta charset="UTF-8">
-    <title>Task By ID</title>
+    <title>Individual Task</title>
+    <nav>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+        <ul>
+            <li><strong>The Wiser Company</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" class="secondary">PlaceHolder</a></li>
+        </ul>
+    </nav>
 </head>
-<body>
-<table>
+<body class="container">
+<article data-theme="light">
+    <h1 align="center" th:text="${task.title}">Task</h1>
+</article>
+<table role="grid">
+    <thead>
     <tr>
-        <th>Task Name</th>
-        <th>task description</th>
+        <th scope="col" align="center">Description</th>
     </tr>
-    <tr>
-        <td th:text="${task.title}">Task name here</td>
-        <td th:text="${task.description}">Task Description here</td>
+    </thead>
+    <tbody>
+        <td th:text="${task.description}"></td>
     </tr>
+    </tbody>
 </table>
+
 </body>
 </html>
