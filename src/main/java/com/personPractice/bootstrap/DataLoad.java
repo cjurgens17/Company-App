@@ -4,17 +4,13 @@ package com.personPractice.bootstrap;
 import com.personPractice.models.Department;
 import com.personPractice.models.Employee;
 import com.personPractice.models.Task;
+import com.personPractice.repository.DepartmentRepository;
 import com.personPractice.repository.EmployeeRepository;
 import com.personPractice.repository.TaskRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Year;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,10 +19,12 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
 
     private final TaskRepository taskRepository;
     private final EmployeeRepository employeeRepository;
+    private final DepartmentRepository departmentRepository;
 
-    public DataLoad(TaskRepository taskRepository, EmployeeRepository employeeRepository) {
+    public DataLoad(TaskRepository taskRepository, EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
         this.taskRepository = taskRepository;
         this.employeeRepository = employeeRepository;
+        this.departmentRepository = departmentRepository;
     }
 
     private Set<Department> departments = new HashSet<>();
@@ -43,6 +41,7 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
             taskRepository.saveAll(getTasks());
             employeeRepository.saveAll(getEmployees());
+            departmentRepository.saveAll(saveDepartments());
     }
 
     private Set<Task> getTasks(){
@@ -147,6 +146,15 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         employees.add(employee3);
 
         return employees;
+    }
+
+    public Set<Department> saveDepartments(){
+        Department department = new Department();
+        department.setId(6L);
+        department.setDepartmentName("Service");
+        getDepartments().add(department);
+
+        return getDepartments();
     }
 
 
