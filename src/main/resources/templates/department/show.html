@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department By ID</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Department Id</th>
+        <th>Department Name</th>
+    </tr>
+    <tr>
+        <td th:text="${department.id}">1</td>
+        <td th:text="${department.departmentName}">Swifty Lou</td>
+    </tr>
+</table>
+</body>
+</html>
