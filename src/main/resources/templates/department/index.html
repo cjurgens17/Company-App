@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  data-theme="dark" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
   <meta charset="UTF-8">
   <title>List of Departments</title>
+  <nav>
+    <ul>
+      <li><a href="#" class="secondary">PlaceHolder</a></li>
+    </ul>
+    <ul>
+      <li><strong>The Wiser Company</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#" class="secondary">PlaceHolder</a></li>
+    </ul>
+  </nav>
 </head>
-<body>
-<h1>Departments</h1>
-
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Department Name</th>
-  </tr>
+<body class="container">
+<article data-theme="light">
+<h1 align="center">Departments</h1>
+</article>
+<table role="grid">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Department Name</th>
+    </tr>
+  </thead>
+  <tbody>
   <tr th:each="department : ${departments}">
-    <td th:text="${department.id}"></td>
+    <th scope="row" th:text="${department.id}">ID</th>
     <td th:text="${department.departmentName}"></td>
     <td><a href="#" th:href="@{'/departments/show/'+ ${department.id}}">View</a></td>
   </tr>
+  </tbody>
 </table>
+
 </body>
 </html>
