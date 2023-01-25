@@ -38,6 +38,14 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public Task findById(Long aLong) {
         return taskRepository.findById(aLong).orElse(null);
+
+//        Optional<Task> taskOptional = taskRepository.findById(aLong);
+//
+//        if(!taskOptional.isPresent()){
+//            throw new RuntimeException("Task Not Found!");
+//        }
+//
+//        return taskOptional.get();
     }
 
     @Override

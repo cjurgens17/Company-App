@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Task Name</th>
+        <th>task description</th>
+    </tr>
+    <tr>
+        <td th:text="${task.title}">Task name here</td>
+        <td th:text="${task.description}">Task Description here</td>
+    </tr>
+</table>
+</body>
+</html>

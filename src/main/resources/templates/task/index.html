@@ -17,6 +17,9 @@
         <td th:text="${task.id}"></td>
         <td th:text="${task.title}"></td>
         <td th:text="${task.description}"></td>
+        <td>
+            <a href="#" th:href="@{'/tasks/show/'+ ${task.id}}">View</a>
+        </td>
     </tr>
 </table>
 </body>

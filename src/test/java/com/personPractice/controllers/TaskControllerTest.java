@@ -8,6 +8,9 @@ import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 public class TaskControllerTest {
 
@@ -56,5 +61,18 @@ public class TaskControllerTest {
         verify(model,times(1)).addAttribute(eq("tasks"), argumentCaptor.capture());
         List<Task> listInTaskController = argumentCaptor.getValue();
         assertEquals(2,listInTaskController.size());
+    }
+    @Test
+    public void taskById() throws Exception {
+        Task task = new Task();
+        task.setId(1L);
+
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(taskController).build();
+
+        when(taskService.findById(anyLong())).thenReturn(task);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/tasks/show/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("task/show"));
     }
 }
