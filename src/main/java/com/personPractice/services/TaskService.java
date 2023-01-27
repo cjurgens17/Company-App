@@ -10,4 +10,6 @@ public interface TaskService extends CrudService<Task,Long>{
 
     List<Task> getTasks();
 
+    int updateTask(Task task);
+
 }

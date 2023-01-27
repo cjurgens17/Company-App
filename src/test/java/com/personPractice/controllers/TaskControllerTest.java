@@ -3,6 +3,7 @@ package com.personPractice.controllers;
 import com.personPractice.controllers.TaskController;
 import com.personPractice.models.Task;
 import com.personPractice.services.TaskService;
+import com.personPractice.services.TaskServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -25,6 +26,9 @@ public class TaskControllerTest {
 
     @Mock
     TaskService taskService;
+
+    @Mock
+    TaskServiceImpl taskServiceImpl;
     @Mock
     Model model;
 
@@ -34,7 +38,7 @@ public class TaskControllerTest {
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
-        taskController = new TaskController(taskService);
+        taskController = new TaskController(taskService, taskServiceImpl);
     }
 
     @Test
