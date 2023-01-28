@@ -4,7 +4,6 @@ package com.personPractice.controllers;
 import com.personPractice.models.Task;
 import com.personPractice.services.TaskService;
 import com.personPractice.services.TaskServiceImpl;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -37,8 +36,10 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/updateTask", method = RequestMethod.PUT)
-    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    public String updateTask(@RequestBody Task task){
-        return taskServiceImpl.updateTask(task) > 0 ? "Update Successful":"Update Failed";
+    public String updateTask(@RequestBody Task task, Model model){
+
+        model.addAttribute("task", taskServiceImpl.updateTask(task));
+
+        return "task/show";
     }
 }

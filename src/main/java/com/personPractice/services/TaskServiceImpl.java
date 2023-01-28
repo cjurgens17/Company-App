@@ -49,8 +49,9 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public int updateTask(Task task){
-        return taskRepository.updateTask(task.getTitle(), task.getDescription(), task.getId());
+    public Task updateTask(Task task){
+        taskRepository.updateTask(task.getTitle(), task.getDescription(), task.getId());
+        return task;
     }
 
     @Override
