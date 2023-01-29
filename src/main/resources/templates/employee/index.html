@@ -20,25 +20,68 @@
 <article data-theme="light">
     <h1 align="center">Employees</h1>
 </article>
-<table role="grid">
+<div th:switch="${employees}">
+    <h2 th:case="null">No users yet!</h2>
+<table th:case="*" role="grid">
     <thead>
     <tr>
         <th scope="col">ID</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Hire Date</th>
+        <th scope="col">Department</th>
+        <th scope="col">Job</th>
         <th scope="col">Salary</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="employee : ${employees}">
         <th scope="row" th:text="${employee.id}">ID</th>
-        <td th:text="${employee.firstName}"></td>
-        <td th:text="${employee.lastName}"></td>
-        <td th:text="${#numbers.formatCurrency(employee.salary)}"></td>
-        <td><a href="#" th:href="@{'/employees/show/'+ ${employee.id}}">View</a></td>
+        <td th:text="${employee.firstName} ?: '(Not Available)'"></td>
+        <td th:text="${employee.lastName} ?: '(Not Available)'"></td>
+        <td th:text="${employee.lastName} ?: '(Not Available)'"></td>
+        <td th:text="${employee.email} ?: '(Not Available)'"></td>
+        <td th:text="${employee.phoneNumber} ?: '(Not Available)'"></td>
+        <td th:text="${employee.hireDate} ?: '(Not Available)'"></td>
+        <td th:text="${employee?.department?.departmentName} ?: '(Not Available)'"></td>
+        <td th:text="${employee?.job?.jobTitle} ?: '(Not Available)'"></td>
+        <td th:text="${#numbers.formatCurrency(employee.salary)} ?: '(Not Available)'"></td>
+        <td><a th:href="@{'/employees/show/'+ ${employee.id}}">View</a></td>
+        <td><a th:href="@{/employees/edit/{id}(id=${employee.id})}">Edit</a></td>
+        <td><a th:href="@{/employees/delete/{id}(id=${employee.id})}">Delete</a></td>
+        <td><a href="/employees/addEmployee">Add A New Employee</a></td>
     </tr>
     </tbody>
 </table>
+</div>
 
 </body>
 </html>
+
+<!--<div th:switch="${employees}">-->
+<!--    <h2 th:case="null">No users yet!</h2>-->
+<!--    <div th:case="*">-->
+<!--        <h2>Employees</h2>-->
+<!--        <table>-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th>Name</th>-->
+<!--                <th>Email</th>-->
+<!--                <th>Edit</th>-->
+<!--                <th>Delete</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr th:each="employee : ${employees}">-->
+<!--                <td th:text="${employee.firstName}"></td>-->
+<!--                <td th:text="${employee.email}"></td>-->
+<!--                <td><a th:href="@{/employees/edit/{id}(id=${employee.id})}">Edit</a></td>-->
+<!--                <td><a th:href="@{/employees/delete/{id}(id=${employee.id})}">Delete</a></td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--    <p><a href="/employees/addEmployee">Add a new employee</a></p>-->
+<!--</div>-->
