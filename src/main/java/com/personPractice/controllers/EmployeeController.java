@@ -50,6 +50,7 @@ public class EmployeeController {
             return "employee/addEmployee";
         }
       //  model.addAttribute("employees", employeeService.findAll());
+        employee.setJob(employee.getJob());
         employeeService.save(employee);
         return "redirect:/employees/index";
     }
