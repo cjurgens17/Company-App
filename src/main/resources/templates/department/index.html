@@ -32,6 +32,9 @@
     <th scope="row" th:text="${department.id}">ID</th>
     <td th:text="${department.departmentName}"></td>
     <td><a href="#" th:href="@{'/departments/show/'+ ${department.id}}">View</a></td>
+    <td><a th:href="@{/departments/edit/{id}(id=${department.id})}">Edit</a></td>
+    <td><a th:href="@{/departments/delete/{id}(id=${department.id})}">Delete</a></td>
+    <td><a href="/departments/addDepartment">Add A New Department</a></td>
   </tr>
   </tbody>
 </table>
