@@ -1,5 +1,6 @@
 package com.personPractice.services;
 
+import com.personPractice.exceptions.NotFoundException;
 import com.personPractice.models.Department;
 import com.personPractice.repository.DepartmentRepository;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,9 @@ public class DepartmentServiceImpl implements DepartmentService{
 
     @Override
     public Department findById(Long aLong) {
+        if(departmentRepository.findById(aLong).isEmpty()){
+            throw new NotFoundException("Department Not Found For ID value: " + aLong);
+        }
         return departmentRepository.findById(aLong).orElse(null);
     }
 
