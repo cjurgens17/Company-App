@@ -1,5 +1,6 @@
 package com.personPractice.services;
 
+import com.personPractice.exceptions.NotFoundException;
 import com.personPractice.models.Employee;
 import com.personPractice.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,10 @@ public class EmployeeServiceImpl  implements EmployeeService{
 
     @Override
     public Employee findById(Long aLong) {
+
+        if(employeeRepository.findById(aLong).isEmpty()){
+            throw new NotFoundException("Employee Not Found For ID value: " + aLong);
+        }
         return employeeRepository.findById(aLong).orElse(null);
     }
 

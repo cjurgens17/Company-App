@@ -1,6 +1,7 @@
 package com.personPractice.services;
 
 
+import com.personPractice.exceptions.NotFoundException;
 import com.personPractice.models.Task;
 import com.personPractice.repository.TaskRepository;
 import org.springframework.stereotype.Service;
@@ -37,15 +38,10 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public Task findById(Long aLong) {
+        if(taskRepository.findById(aLong).isEmpty()){
+            throw new NotFoundException("Task Not Found For ID value: " + aLong);
+        }
         return taskRepository.findById(aLong).orElse(null);
-
-//        Optional<Task> taskOptional = taskRepository.findById(aLong);
-//
-//        if(!taskOptional.isPresent()){
-//            throw new RuntimeException("Task Not Found!");
-//        }
-//
-//        return taskOptional.get();
     }
 
     @Override
