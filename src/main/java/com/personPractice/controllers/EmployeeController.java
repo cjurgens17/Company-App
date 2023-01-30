@@ -74,7 +74,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable Long id, Model model){
+    public String deleteEmployee(@PathVariable Long id, Model model){
         Employee employee = employeeService.findById(id);
         employeeService.delete(employee);
       //  model.addAttribute("employees",employeeService.getEmployees());
