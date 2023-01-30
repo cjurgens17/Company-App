@@ -99,7 +99,7 @@ public class EmployeeControllerTest {
     }
 
     @Test
-    public void deleteUser() throws Exception {
+    public void deleteEmployee() throws Exception {
 
         mockMvc.perform(MockMvcRequestBuilders.get("/employees/delete/1"))
                 .andExpect(status().is3xxRedirection())
