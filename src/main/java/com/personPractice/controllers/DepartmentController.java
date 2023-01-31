@@ -46,7 +46,7 @@ public class DepartmentController {
         if(result.hasErrors()){
             return "department/addDepartment";
         }
-        model.addAttribute("departments", departmentService.findAll());
+//        model.addAttribute("departments", departmentService.findAll());
         departmentService.save(department);
         return"redirect:/departments/index";
     }

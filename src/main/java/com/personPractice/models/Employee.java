@@ -38,7 +38,7 @@ public class Employee extends BaseEntity {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Job job;
 
     @Embedded

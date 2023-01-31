@@ -76,8 +76,8 @@
 
         <label for="job">
             Job
-            <input type="text" th:field="*{job}" id="job" placeholder="job">
-            <span th:if="${#fields.hasErrors('job')}" th:errors="*{job}"></span>
+            <input type="text" th:field="*{job.jobTitle}" id="job" placeholder="job title">
+            <span th:if="${#fields.hasErrors('job.jobTitle')}" th:errors="*{job}"></span>
         </label>
 
 
