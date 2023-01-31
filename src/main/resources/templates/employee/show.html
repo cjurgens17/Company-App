@@ -24,10 +24,12 @@
     <thead>
     <tr>
         <th scope="col">Salary</th>
+        <th scope="col">Job</th>
     </tr>
     </thead>
     <tbody>
         <td th:text="${#numbers.formatCurrency(employee.salary)}"></td>
+        <td th:text="${employee?.job?.jobTitle} ?: '(Not Available)'"></td>
     </tr>
     </tbody>
 </table>

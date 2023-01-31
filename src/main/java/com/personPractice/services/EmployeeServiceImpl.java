@@ -2,6 +2,7 @@ package com.personPractice.services;
 
 import com.personPractice.exceptions.NotFoundException;
 import com.personPractice.models.Employee;
+import com.personPractice.models.Job;
 import com.personPractice.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 

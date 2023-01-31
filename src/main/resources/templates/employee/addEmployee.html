@@ -74,6 +74,12 @@
             <span th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
         </label>
 
+        <label for="job">
+            Job
+            <input type="text" th:field="*{job}" id="job" placeholder="job">
+            <span th:if="${#fields.hasErrors('job')}" th:errors="*{job}"></span>
+        </label>
+
 
 
         <button type="submit" value="Add Employee">Submit</button>
