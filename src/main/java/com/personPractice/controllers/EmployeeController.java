@@ -2,7 +2,9 @@ package com.personPractice.controllers;
 
 
 import com.personPractice.models.Employee;
+import com.personPractice.models.Job;
 import com.personPractice.services.EmployeeService;
+import com.personPractice.services.JobService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +23,10 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
+
     }
 
     @RequestMapping({"/","index","/index"})
