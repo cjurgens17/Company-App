@@ -1,6 +1,9 @@
 package com.personPractice.bootstrap;
 
 
+
+
+
 import com.personPractice.models.Department;
 import com.personPractice.models.Employee;
 import com.personPractice.models.Task;
@@ -27,21 +30,11 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         this.departmentRepository = departmentRepository;
     }
 
-    private Set<Department> departments = new HashSet<>();
-
-    public Set<Department> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(Set<Department> departments) {
-        this.departments = departments;
-    }
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
             taskRepository.saveAll(getTasks());
             employeeRepository.saveAll(getEmployees());
-            departmentRepository.saveAll(saveDepartments());
+            departmentRepository.saveAll(getDepartments());
     }
 
     private Set<Task> getTasks(){
@@ -100,47 +93,29 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         //add data for bootstrap employees load up
         Set<Employee> employees = new HashSet<>();
 
-        Department department = new Department();
-        department.setId(1L);
-        department.setDepartmentName("Software");
-        getDepartments().add(department);
-
         Employee employee1 = new Employee();
         employee1.setFirstName("Christopher");
         employee1.setLastName("Walken");
         employee1.setId(1L);
         employee1.setSalary(100_000L);
-        employee1.setDepartment(department);
         employee1.setEmail("CWalken@yahoo.com");
 
         employees.add(employee1);
-
-        Department department2 = new Department();
-        department2.setId(2L);
-        department2.setDepartmentName("Maintenance");
-        getDepartments().add(department2);
 
         Employee employee2 = new Employee();
         employee2.setFirstName("Mike");
         employee2.setLastName("Wazowski");
         employee2.setId(2L);
         employee2.setSalary(150_000L);
-        employee2.setDepartment(department2);
         employee2.setEmail("AIncMonster@yahoo.com");
 
         employees.add(employee2);
-
-        Department department3 = new Department();
-        department3.setId(3L);
-        department3.setDepartmentName("Customer Service");
-        getDepartments().add(department3);
 
         Employee employee3 = new Employee();
         employee3.setFirstName("Brett");
         employee3.setLastName("Johnson");
         employee3.setId(3L);
         employee3.setSalary(200_000L);
-        employee3.setDepartment(department3);
         employee3.setEmail("IsYourNetworkSecure@yahoo.com");
 
         employees.add(employee3);
@@ -148,14 +123,30 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         return employees;
     }
 
-    public Set<Department> saveDepartments(){
-        Department department = new Department();
-        department.setId(6L);
-        department.setDepartmentName("Service");
-        getDepartments().add(department);
+    private Set<Department> getDepartments(){
 
-        return getDepartments();
+        Set<Department> departments = new HashSet<>();
+
+        Department department1 = new Department();
+        department1.setId(1L);
+        department1.setDepartmentName("Service");
+        departments.add(department1);
+
+        Department department2 = new Department();
+        department2.setId(2L);
+        department2.setDepartmentName("Maintenance");
+        departments.add(department2);
+
+        Department department3 = new Department();
+        department3.setId(3L);
+        department3.setDepartmentName("Testing");
+        departments.add(department3);
+
+        Department department4 = new Department();
+        department4.setId(4L);
+        department4.setDepartmentName("Network Engineering");
+        departments.add(department4);
+
+        return departments;
     }
-
-
 }
