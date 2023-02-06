@@ -34,7 +34,7 @@ public class EmployeeController {
 
         model.addAttribute("employees", employeeService.getEmployees());
 
-        return "employee/index";
+        return "projects";
     }
     @RequestMapping({"/show/{id}"})
     public String findById(@PathVariable String id, Model model){
