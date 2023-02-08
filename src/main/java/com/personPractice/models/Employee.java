@@ -46,4 +46,8 @@ public class Employee extends BaseEntity {
 
     @Enumerated(value = EnumType.STRING)
     private State state;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
+
 }
