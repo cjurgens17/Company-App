@@ -127,10 +127,41 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         employee3.setLastName("Johnson");
         employee3.setId(3L);
         employee3.setSalary(200_000L);
-        employee3.setEmail("IsYourNetworkSecure@yahoo.com");
+        employee3.setEmail("CyberSecurity@yahoo.com");
         employee3.setDepartment(Department.builder().departmentName("Computer Operations").build());
 
         employeeRepository.save(employee3);
+
+        Employee employee4 = new Employee();
+        employee4.setFirstName("Donald");
+        employee4.setLastName("Duck");
+        employee4.setId(4L);
+        employee4.setSalary(200_000L);
+        employee4.setEmail("WaltDisney@yahoo.com");
+        employee4.setDepartment(Department.builder().departmentName("Human Resources").build());
+
+        employeeRepository.save(employee4);
+
+        Employee employee5 = new Employee();
+        employee5.setFirstName("John");
+        employee5.setLastName("wick");
+        employee5.setId(5L);
+        employee5.setSalary(100_000L);
+        employee5.setEmail("AnotherMansDog@aol.com");
+        employee5.setDepartment(Department.builder().departmentName("Power Vac Specialist").build());
+
+        employeeRepository.save(employee5);
+
+        Employee employee6 = new Employee();
+        employee6.setFirstName("John");
+        employee6.setLastName("Snow");
+        employee6.setId(6L);
+        employee6.setSalary(250_000L);
+        employee6.setEmail("NightsWatch@castleRock.com");
+        employee6.setDepartment(Department.builder().departmentName("Sales").build());
+
+        employeeRepository.save(employee6);
+
 
     }
 
