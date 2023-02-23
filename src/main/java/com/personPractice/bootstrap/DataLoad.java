@@ -6,7 +6,7 @@ package com.personPractice.bootstrap;
 
 import com.personPractice.models.Department;
 import com.personPractice.models.Employee;
-import com.personPractice.models.Image;
+
 import com.personPractice.models.Task;
 import com.personPractice.repository.DepartmentRepository;
 import com.personPractice.repository.EmployeeRepository;
@@ -18,11 +18,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
