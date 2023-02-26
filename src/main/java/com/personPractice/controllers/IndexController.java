@@ -13,4 +13,9 @@ public class IndexController {
     public String indexPage(Model model){
         return "index";
     }
+
+    @RequestMapping({"index2"})
+    public String index2Page(Model model){
+        return "index2";
+    }
 }
