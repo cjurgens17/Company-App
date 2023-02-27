@@ -22,11 +22,6 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
-    @RequestMapping({"services"})
-    public String getServices(Model model){
-        return "service-details";
-    }
-
     @RequestMapping({"/","index","/index"})
     public String getListOfDepartments(Model model){
 

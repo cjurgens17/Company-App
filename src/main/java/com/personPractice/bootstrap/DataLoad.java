@@ -7,12 +7,11 @@ package com.personPractice.bootstrap;
 import com.personPractice.models.Department;
 import com.personPractice.models.Employee;
 
+import com.personPractice.models.PoolService;
 import com.personPractice.models.Task;
-import com.personPractice.repository.DepartmentRepository;
 import com.personPractice.repository.EmployeeRepository;
-import com.personPractice.repository.ImageRepository;
+import com.personPractice.repository.PoolServiceRepository;
 import com.personPractice.repository.TaskRepository;
-import com.personPractice.services.ImageService;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -24,29 +23,25 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
 
     private final TaskRepository taskRepository;
     private final EmployeeRepository employeeRepository;
-    private final DepartmentRepository departmentRepository;
-    private final ImageRepository imageRepository;
-    private final ImageService imageService;
+    private final PoolServiceRepository poolServiceRepository;
 
 
 
 
 
-    public DataLoad(TaskRepository taskRepository, EmployeeRepository employeeRepository, DepartmentRepository departmentRepository, ImageRepository imageRepository, ImageService imageService) {
+
+
+    public DataLoad(TaskRepository taskRepository, EmployeeRepository employeeRepository, PoolServiceRepository poolServiceRepository) {
         this.taskRepository = taskRepository;
         this.employeeRepository = employeeRepository;
-        this.departmentRepository = departmentRepository;
-        this.imageRepository = imageRepository;
-        this.imageService = imageService;
+        this.poolServiceRepository = poolServiceRepository;
     }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
             getTasks();
             getEmployees();
-    //            departmentRepository.saveAll(getDepartments());
-//            imageRepository.saveAll(getImages());
-
+            getServices();
     }
     @Transactional
     private void getTasks(){
@@ -158,6 +153,77 @@ public class DataLoad implements ApplicationListener<ContextRefreshedEvent> {
         employeeRepository.save(employee6);
 
 
+    }
+
+    @Transactional
+    public void getServices(){
+        //add services for database load
+        PoolService service1 = new PoolService();
+        service1.setDescription("Trust our experienced team for all your construction needs. We offer a range of high-quality services, including new construction, remodeling, and renovations." +
+                " Our skilled professionals work closely with you to bring your vision to life, ensuring that your project is completed to the highest standards of quality and durability." +
+                " From the initial planning stages to the final touches, we're dedicated to providing a top-quality service, with attention to detail and a commitment to customer satisfaction." +
+                " Contact us today to learn more about how we can help you with your building project.");
+        service1.setTitle("Construction");
+        service1.setId(1L);
+        service1.setImage("https://www.kaysmedical.com/wp-content/uploads/2019/09/Construction-1024x768.jpg");
+        poolServiceRepository.save(service1);
+
+        PoolService service2 = new PoolService();
+        service2.setDescription("Regular pool maintenance is essential to keep your pool in top condition." +
+                " Our pool maintenance service provides a comprehensive range of services to ensure that your pool is always clean, safe, and ready to use." +
+                " Our experienced technicians use the latest equipment and techniques to keep your pool water crystal clear and balanced, and they can also identify and repair any issues that may arise." +
+                " We offer flexible scheduling to suit your needs, and our team is dedicated to providing a top-quality service with a commitment to customer satisfaction." +
+                " Contact us today to learn more about how we can help you maintain your pool.");
+        service2.setTitle("Maintenance");
+        service2.setId(2L);
+        service2.setImage("https://poolstar.net/wp-content/uploads/2015/03/Pool-Service-Equipment.jpg");
+        poolServiceRepository.save(service2);
+
+        PoolService service3 = new PoolService();
+        service3.setDescription("Transform your old, outdated pool into a stunning backyard oasis with our pool renovation services." +
+                " Our expert team has years of experience in pool renovation, and we use only the highest quality materials and equipment to ensure that your pool is restored to its former glory." +
+                " Whether you need new tiles, a new coping, or a complete pool remodel, we work closely with you to bring your vision to life." +
+                " We understand that every project is unique, and we're dedicated to providing a top-quality service with attention to detail and a commitment to customer satisfaction." +
+                " Contact us today to learn more about how we can help you renovate your pool.");
+        service3.setTitle("Renovation");
+        service3.setId(3L);
+        service3.setImage("http://www.piscinaliner.com/wordpress/images/WhatsApp-Image-2020-09-04-at-09.41.26-1024x768.jpeg");
+        poolServiceRepository.save(service3);
+
+        PoolService service4 = new PoolService();
+        service4.setDescription("Don't let a damaged or malfunctioning pool ruin your summer fun." +
+                " Our pool repair service provides a comprehensive range of repair services to keep your pool in top condition." +
+                " Our experienced technicians can quickly identify and repair any issues that may arise, from leaks and cracks to malfunctioning pumps and filters." +
+                " We use only the highest quality materials and equipment to ensure that your repairs are durable and long-lasting." +
+                " We're dedicated to providing a top-quality service with a commitment to customer satisfaction, and we offer flexible scheduling to suit your needs." +
+                " Contact us today to learn more about how we can help you repair your pool.");
+        service4.setTitle("Repairs");
+        service4.setId(4L);
+        service4.setImage("https://www.atxleakdetection.com/wp-content/uploads/2022/12/methods-2-1024x768.jpg");
+        poolServiceRepository.save(service4);
+
+        PoolService service5 = new PoolService();
+        service5.setDescription("Say goodbye to harsh chemicals and hello to silky-smooth pool water with our pool salt conversion service." +
+                " Our expert team can convert your existing chlorine pool into a saltwater pool quickly and easily." +
+                " Saltwater pools offer many benefits, including softer and gentler water, lower maintenance costs, and a more enjoyable swimming experience." +
+                " We use high-quality equipment and techniques to ensure that your conversion is seamless and stress-free." +
+                " Our team is dedicated to providing a top-quality service with a commitment to customer satisfaction, and we're happy to answer any questions you may have about the conversion process." +
+                " Contact us today to learn more about how we can help you convert your pool to saltwater.");
+        service5.setTitle("Salt Conversion");
+        service5.setId(5L);
+        service5.setImage("https://alohadesertpools.com/wp-content/uploads/2021/12/pexels-kindel-media-8688524-1024x768.jpg");
+        poolServiceRepository.save(service5);
+
+        PoolService service6 = new PoolService();
+        service6.setDescription("Ensure that your pool is safe and ready for use with our pool walkthrough service." +
+                " Our experienced technicians will inspect your pool and its equipment to ensure that everything is in good working order and meets safety standards." +
+                " We'll identify any issues or potential hazards and provide recommendations for repairs or upgrades to keep your pool running smoothly." +
+                " We offer flexible scheduling to suit your needs, and our team is dedicated to providing a top-quality service with a commitment to customer satisfaction." +
+                " Contact us today to learn more about how we can help you with your pool walkthrough needs.");
+        service6.setTitle("Pool Walkthrough");
+        service6.setId(6L);
+        service6.setImage("https://production-next-images-cdn.thumbtack.com/i/456340651934343183/width/1024.jpeg");
+        poolServiceRepository.save(service6);
     }
 
 //    private Set<Department> getDepartments(){

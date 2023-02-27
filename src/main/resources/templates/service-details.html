@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>UpConstruction Bootstrap Template - Service Details</title>
+  <title>PoolVikings - Service Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/../assets/img/favicon.png" rel="icon">
+  <link href="/../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +21,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="/../assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -100,26 +102,28 @@
     <!-- ======= Service Details Section ======= -->
     <section id="service-details" class="service-details">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h1 th:text=${service.title}>service</h1>
 
         <div class="row gy-4">
 
           <div class="col-lg-4">
             <div class="services-list">
-              <a href="/contact/" class="active">Construction</a>
-              <a href="/contact/">Maintenance</a>
-              <a href="/contact/">Renovation</a>
-              <a href="/contact/">Salt Conversion</a>
-              <a href="/contact">Repairs</a>
-              <a href="/contact">Pool Walkthrough</a>
+              <a th:href="@{/services/show/1}">Construction</a>
+              <a th:href="@{/services/show/2}">Maintenance</a>
+              <a th:href="@{/services/show/3}">Renovation</a>
+              <a th:href="@{/services/show/5}">Salt Conversion</a>
+              <a th:href="@{/services/show/4}">Repairs</a>
+              <a th:href="@{/services/show/6}">Pool Walkthrough</a>
             </div>
           </div>
 
           <div class="col-lg-8">
-            <img src="https://ik.imagekit.io/g1mrfxwzc7w/wp-content/uploads/2021/01/Telemarketing-1024x768.jpg" alt="" class="img-fluid services-img">
+            <img th:src="${service.image}" alt="" class="img-fluid services-img">
             <h3>Questions?</h3>
             <p>
               Please feel free to contact our team if you're interested in any of our services.
             </p>
+<!--            <a href="/contact/" class="readmore stretched-link">Contact <i class="bi bi-arrow-right"></i></a>-->
             <ul>
               <li><i class="bi bi-check-circle"></i> <span>24/7 support</span></li>
               <li><i class="bi bi-check-circle"></i> <span>Excellent Customer Satisfaction</span></li>
@@ -230,16 +234,17 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="/../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/../assets/vendor/aos/aos.js"></script>
+  <script src="/../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="/../assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </body>
 

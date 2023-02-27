@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -212,71 +212,71 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div th:each="service : ${services}" class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
                 <i class="fa-solid fa-mountain-city"></i>
               </div>
-              <h3>Construction</h3>
-              <p>Our construction service involves designing, planning, and building customized swimming pools that cater to all of our client's specific needs and preferences, while ensuring the highest standards of quality and safety.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
+              <h3 th:text="${service.title}">Construction</h3>
+              <p th:text="${service.description}">Our construction service involves designing, planning, and building customized swimming pools that cater to all of our client's specific needs and preferences, while ensuring the highest standards of quality and safety.</p>
+              <a th:href="@{/services/show/{id}(id=${service.id})}" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-              </div>
-              <h3>Maintenance</h3>
-              <p>Pool maintenance is the process of regularly cleaning, treating, and servicing a swimming pool to ensure that it remains clean, safe, and fully functional, while prolonging its lifespan.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">-->
+<!--            <div class="service-item position-relative">-->
+<!--              <div class="icon">-->
+<!--                <i class="fa-solid fa-arrow-up-from-ground-water"></i>-->
+<!--              </div>-->
+<!--              <h3>Maintenance</h3>-->
+<!--              <p>Pool maintenance is the process of regularly cleaning, treating, and servicing a swimming pool to ensure that it remains clean, safe, and fully functional, while prolonging its lifespan.</p>-->
+<!--              <a href="/services/maintenance" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-compass-drafting"></i>
-              </div>
-              <h3>Renovation</h3>
-              <p>Pool renovation is the process of upgrading, repairing, or redesigning an existing swimming pool to enhance its aesthetic appeal, functionality, and overall value.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">-->
+<!--            <div class="service-item position-relative">-->
+<!--              <div class="icon">-->
+<!--                <i class="fa-solid fa-compass-drafting"></i>-->
+<!--              </div>-->
+<!--              <h3>Renovation</h3>-->
+<!--              <p>Pool renovation is the process of upgrading, repairing, or redesigning an existing swimming pool to enhance its aesthetic appeal, functionality, and overall value.</p>-->
+<!--              <a href="/services/renovation" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-trowel-bricks"></i>
-              </div>
-              <h3>Salt Conversion</h3>
-              <p>In addition to providing a more pleasant swimming experience with reduced skin and eye irritation, pool salt conversion also eliminates the need for storing and handling harsh chemicals, lowers ongoing maintenance costs, and can prolong the lifespan of the pool equipment.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">-->
+<!--            <div class="service-item position-relative">-->
+<!--              <div class="icon">-->
+<!--                <i class="fa-solid fa-trowel-bricks"></i>-->
+<!--              </div>-->
+<!--              <h3>Salt Conversion</h3>-->
+<!--              <p>In addition to providing a more pleasant swimming experience with reduced skin and eye irritation, pool salt conversion also eliminates the need for storing and handling harsh chemicals, lowers ongoing maintenance costs, and can prolong the lifespan of the pool equipment.</p>-->
+<!--              <a href="/services/salt" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-helmet-safety"></i>
-              </div>
-              <h3>Repairs</h3>
-              <p>Pool repair service can save pool owners significant amounts of money by identifying and repairing issues early, preventing further damage to the pool and equipment, and avoiding the need for costly replacements.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">-->
+<!--            <div class="service-item position-relative">-->
+<!--              <div class="icon">-->
+<!--                <i class="fa-solid fa-helmet-safety"></i>-->
+<!--              </div>-->
+<!--              <h3>Repairs</h3>-->
+<!--              <p>Pool repair service can save pool owners significant amounts of money by identifying and repairing issues early, preventing further damage to the pool and equipment, and avoiding the need for costly replacements.</p>-->
+<!--              <a href="/services/repairs" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-              </div>
-              <h3>Pool Walkthrough</h3>
-              <p>A Pool walkthrough is a comprehensive inspection of a swimming pool and its equipment, which is conducted by a professional pool technician to identify any potential issues or necessary repairs, ensuring that the pool is safe, functional, and in good condition.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
+<!--          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">-->
+<!--            <div class="service-item position-relative">-->
+<!--              <div class="icon">-->
+<!--                <i class="fa-solid fa-arrow-up-from-ground-water"></i>-->
+<!--              </div>-->
+<!--              <h3>Pool Walkthrough</h3>-->
+<!--              <p>A Pool walkthrough is a comprehensive inspection of a swimming pool and its equipment, which is conducted by a professional pool technician to identify any potential issues or necessary repairs, ensuring that the pool is safe, functional, and in good condition.</p>-->
+<!--              <a href="/services/walkthrough" class="readmore stretched-link">Learn more <i class="bi bi-arrow-right"></i></a>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Service Item &ndash;&gt;-->
 
         </div>
 
