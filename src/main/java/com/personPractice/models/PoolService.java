@@ -23,5 +23,9 @@ public class PoolService extends BaseEntity{
     @Column(name="title")
     private String title;
 
+    @Column(name="contact")
+    @Lob
+    private String contact;
+
 
 }

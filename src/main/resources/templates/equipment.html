@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PoolVikings - Contact</title>
+  <title>PoolVikings - Employees</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -39,31 +39,31 @@
 
 <body>
 
-<!-- ======= Header ======= -->
-<header id="header" class="header d-flex align-items-center">
-  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <a href="/" class="logo d-flex align-items-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1>PoolVikings<span>.</span></h1>
-    </a>
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>PoolVikings<span>.</span></h1>
+      </a>
 
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/index">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/equipment">Equipment</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/contact/" class="active">Contact</a></li>
-      </ul>
-    </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/index">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/equipment" class="active">Equipment</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
 
-  </div>
-</header><!-- End Header -->
+    </div>
+  </header><!-- End Header -->
 
   <main id="main">
 
@@ -71,81 +71,114 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('https://wallpaperaccess.com/full/2618482.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2>Contact</h2>
+        <h2>Equipment</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Contact</li>
+          <li>Equipment</li>
         </ol>
 
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <!-- ======= Alt Services Section ======= -->
+          <section id="alt-services" class="alt-services">
+            <div class="container" data-aos="fade-up">
 
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p>D900 Pool Road, NY 535022, USA</p>
-            </div>
-          </div><!-- End Info Item -->
+              <div class="row justify-content-around gy-4">
+                <div class="col-lg-6 img-bg" style="background-image: url(https://www.superb-vacations.com/wp-content/uploads/2021/11/20211019_191423-1024x768.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>PoolVikings@example.com</p>
-            </div>
-          </div><!-- End Info Item -->
+                <div class="col-lg-5 d-flex flex-column justify-content-center">
+                  <h3>LED Lighting</h3>
+                  <p>Transform your pool into a stunning oasis with our premium-quality LED lighting that will create an enchanting atmosphere for you to enjoy during your night swims, parties or gatherings. With a variety of color options to choose from and energy-efficient features, our LED lighting is an affordable way to enhance the beauty and functionality of your pool.</p>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+1 555 55588 55</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <div class="row gy-4 mt-1">
-
-          <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div><!-- End Google Maps -->
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-easel flex-shrink-0"></i>
+                    <div>
+                      <h4><a href="https://youtu.be/aW__QBNFnCE" class="stretched-link">Check out a live video here</a></h4>
+                      <p>Hayward pool LED lighting is a top-of-the-line, energy-efficient solution that can illuminate your pool and enhance its ambiance with an array of vibrant colors.</p>
+                    </div>
+                  </div><!-- End Icon Box -->
                 </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
 
+            </div>
+          </section><!-- End Alt Services Section -->
+
+          <!-- ======= Alt Services Section 2 ======= -->
+          <section id="alt-services-2" class="alt-services section-bg">
+            <div class="container" data-aos="fade-up">
+
+              <div class="row justify-content-around gy-4">
+                <div class="col-lg-5 d-flex flex-column justify-content-center">
+                  <h3>Loop-Loc Safety Covers</h3>
+                  <p>Loop-Loc safety covers are a durable and reliable solution for protecting your pool and loved ones, as they are designed to withstand heavy weight and harsh weather conditions, ensuring maximum safety and peace of mind. Available in a variety of colors and custom sizes, Loop-Loc safety covers are not only functional but also stylish, blending seamlessly with your pool area's design.</p>
+
+                  <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-easel flex-shrink-0"></i>
+                    <div>
+                      <h4><a href="https://youtu.be/SgLg3fV5BNc" class="stretched-link">Have a look here</a></h4>
+                      <p>A pool liner is an essential component that not only protects your pool's surface but also adds a decorative touch, creating a unique and inviting ambiance in your backyard.</p>
+                    </div>
+                  </div><!-- End Icon Box -->
+                </div>
+
+                <div class="col-lg-6 img-bg" style="background-image: url(https://i.ebayimg.com/images/g/LKMAAOSw0KtfWR7p/s-l1600.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
+              </div>
+
+            </div>
+
+
+          </section><!-- End Alt Services Section 2 -->
+
+    <!-- ======= Alt Services Section ======= -->
+    <section id="alt-services-3" class="alt-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-6 img-bg" style="background-image: url(https://pbs.twimg.com/media/CqAtH5SVMAAmCOF.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
+
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Loop-loc Liners</h3>
+            <p>Loop-Loc liners are a premium-quality and long-lasting solution for renovating your pool, as they feature a unique blend of materials and advanced technology that ensures superior durability and resistance to wear and tear. Available in a wide range of colors and patterns, Loop-Loc liners can enhance the beauty and elegance of your pool, creating a stunning visual impact that will last for years to come.</p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="https://youtu.be/aW__QBNFnCE" class="stretched-link"></a>Check out a live video here</h4>
+                <p>A pool liner is an essential component that not only protects your pool's surface but also adds a decorative touch, creating a unique and inviting ambiance in your backyard.</p>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Alt Services Section -->
+
+    <!-- ======= Alt Services Section 2 ======= -->
+    <section id="alt-services-4" class="alt-services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-4">
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Salt Conversion</h3>
+            <p>A pool salt conversion is a smart and efficient alternative to traditional chlorine-based systems, as it uses salt to generate natural chlorine that effectively cleans your pool and eliminates the need for harmful chemicals. With a salt conversion, you can enjoy a more comfortable and eco-friendly swimming experience, while also reducing maintenance and operational costs.</p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="https://youtu.be/tzD6k8A9b5U" class="stretched-link">Have a look here</a></h4>
+                <p>Pool salt cells are an integral part of salt-based pool systems, as they produce chlorine from the dissolved salt in the water, providing a natural and effective way to sanitize your pool while reducing the need for additional chemicals.</p>
+              </div>
+            </div><!-- End Icon Box -->
+          </div>
+
+          <div class="col-lg-6 img-bg" style="background-image: url(https://www.aqualeisurepoolsandspas.com/wp-content/uploads/2022/04/water-to-swim-in.png);" data-aos="zoom-in" data-aos-delay="100"></div>
+        </div>
+
+      </div>
+
+
+    </section><!-- End Alt Services Section 2 -->
 
   </main><!-- End #main -->
 

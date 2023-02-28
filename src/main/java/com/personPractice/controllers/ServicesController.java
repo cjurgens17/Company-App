@@ -24,4 +24,9 @@ public class ServicesController {
         model.addAttribute("service", poolServiceService.findById(Long.valueOf(id)));
         return "service-details";
     }
+
+    @GetMapping({"/",""})
+    public String getServices(Model model){
+        return "service-details";
+    }
 }
