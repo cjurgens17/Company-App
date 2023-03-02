@@ -22,11 +22,11 @@ public class ServicesController {
     public String getServicesById(@PathVariable String id, Model model){
 
         model.addAttribute("service", poolServiceService.findById(Long.valueOf(id)));
-        return "service-details";
+        return "core/service-details";
     }
 
     @GetMapping({"/",""})
     public String getServices(Model model){
-        return "service-details";
+        return "core/service-details";
     }
 }

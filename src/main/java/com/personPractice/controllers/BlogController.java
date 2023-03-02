@@ -11,6 +11,6 @@ public class BlogController {
 
     @GetMapping({"","/"})
     public String getBlog(){
-        return "blog";
+        return "core/blog";
     }
 }

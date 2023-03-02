@@ -16,7 +16,7 @@ public class IndexController {
     @RequestMapping({"","/","/index.html"})
     public String indexPage(Model model){
         model.addAttribute("services", servicesService.findAll());
-        return "index";
+        return "core/index";
     }
 
 }

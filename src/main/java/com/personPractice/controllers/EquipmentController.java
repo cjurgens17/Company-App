@@ -13,7 +13,7 @@ public class EquipmentController {
     @GetMapping({"","/"})
     public String getEquipment(Model model){
 
-        return "equipment";
+        return "core/equipment";
     }
 
 }

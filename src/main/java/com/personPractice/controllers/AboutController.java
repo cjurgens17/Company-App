@@ -11,6 +11,6 @@ public class AboutController {
 
     @RequestMapping({"index"})
     public String getAbout(){
-        return "about";
+        return "core/about";
     }
 }

@@ -14,7 +14,7 @@ public class ContactController {
 
     @GetMapping({"","/"})
     public String getContact(){
-        return "contact";
+        return "core/contact";
     }
 
 

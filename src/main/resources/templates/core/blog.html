@@ -1,24 +1,3 @@
-<?php
-
-if(isset($_POST['contact_btn'])){
-        $name=$_POST['user_name'];
-        $email=$_POST['user_email'];
-        $subject=$_POST['user_subject'];
-        $msg=$_POST['user_msg'];
-        $to="ctest6092@gmail.com";
-        $header="from:$email";
-        if(mail($to,$subject,$msg,$header)){
-            $msg1="Message submitted
-            successfully";
-
-        }
-}
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +5,7 @@ if(isset($_POST['contact_btn'])){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PoolVikings - Contact</title>
+  <title>PoolVikings - Blog</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -78,8 +57,8 @@ if(isset($_POST['contact_btn'])){
         <li><a href="/about/index">About</a></li>
         <li><a href="/services">Services</a></li>
         <li><a href="/equipment">Equipment</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/contact/" class="active">Contact</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav><!-- .navbar -->
 
@@ -92,83 +71,80 @@ if(isset($_POST['contact_btn'])){
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('https://wallpaperaccess.com/full/2618482.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2>Contact</h2>
+        <h2>Blog</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>Contact</li>
+          <li>Blog</li>
         </ol>
 
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p>D900 Pool Road, NY 535022, USA</p>
+        <div class="row gy-4 posts-list">
+
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="https://i0.wp.com/blog.myswimpro.com/wp-content/uploads/2022/10/master-spas-myswimpro-fares-ksebati-1024x768.jpg?resize=1024%2C768" class="img-fluid" alt="">
+                <span class="post-date">June 15</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">Check out Zodaics 9 Cool Facts About Swimming Pools</h3>
+                <p>
+                  Swimming pools are popular for many reasons. But did you know when the first pool was invented or just how popular they are in this country? Here are some fun facts about swimming pools.
+                </p>
+                <hr>
+                <a href="https://www.zodiacpoolblog.com/en/2017/june/9-cool-facts-about-swimming-pools" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
             </div>
-          </div><!-- End Info Item -->
+          </div><!-- End post list item -->
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>PoolVikings@example.com</p>
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="https://splashdfw.com/wp-content/uploads/2019/06/splash-pools-building-a-custom-pool-is-fun-1024x768.jpg" class="img-fluid" alt="">
+                <span class="post-date">July 25</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">7 Unusual and Fun Facts About Swimming Pools</h3>
+                <p>
+                  For a little bit of fun, we thought we’d put our swimming pool expertise to good use and compile a list of our favourite fun and unusual facts about swimming pools. Why not, right?! Read on below to enlighten yourself with some interesting tidbits about swimming pools that will make for great conversation starters around the dining table.
+                </p>
+                <hr>
+                <a href="https://summertimepools.com.au/7-unusual-and-fun-facts-about-swimming-pools/" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
             </div>
-          </div><!-- End Info Item -->
+          </div><!-- End post list item -->
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+1 555 55588 55</p>
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="https://www.aqualeisurepoolsandspas.com/wp-content/uploads/2022/03/pool-cover.png" class="img-fluid" alt="">
+                <span class="post-date">April 10</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">When Should you Open Your Pool?</h3>
+                <p>
+                  Well, it's that time of year again, folks. And after the winter we had here in Virginia, I say good riddance! But with the warmer weather
+                </p>
+                <hr>
+                <a href="https://www.riverpoolsandspas.com/blog/best-time-to-open-pool#:~:text=You%20should%20open%20your%20pool,opening%20later%20in%20the%20spring." class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
             </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <div class="row gy-4 mt-1">
-<!--          https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"-->
-          <div class="col-lg-6 ">
-            <iframe src="https://www.youtube.com/embed/Li4JWcXa1PA?autoplay=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div><!-- End Google Maps -->
-
-          <div class="col-lg-6">
-            <form action="https://formsubmit.co/ctest6092@gmail.com" onsubmit="window.location.href = '/contact';" method="POST" role="form" class="php-email-form">
-              <input type="hidden" name="_captcha" value="false">
-              <div class="row gy-4">
-                <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <input type="hidden" name="_next" value="contact.html">
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
+          </div><!-- End post list item -->
+        </div><!-- End blog posts list -->
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Blog Section -->
 
   </main><!-- End #main -->
 
@@ -189,10 +165,10 @@ if(isset($_POST['contact_btn'])){
                 <strong>Email:</strong> PoolVikings@example.com<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                <a href="#" onClick="return false;" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" onClick="return false;" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" onClick="return false;" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/christopher-jurgens/" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
