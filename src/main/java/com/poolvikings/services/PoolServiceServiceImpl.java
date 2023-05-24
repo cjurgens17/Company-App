@@ -28,9 +28,7 @@ public class PoolServiceServiceImpl implements PoolServiceService {
 
     @Override
     public PoolService findById(Long aLong) {
-        if(poolServiceRepository.findById(aLong).isEmpty()){
-            throw new NotFoundException("Service Not Found For ID value: " + aLong);
-        }
+        poolServiceRepository.findById(aLong);
         return poolServiceRepository.findById(aLong).orElse(null);
     }
 

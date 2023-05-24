@@ -28,9 +28,7 @@ public class JobServiceImpl implements JobService{
 
     @Override
     public Job findById(Long aLong) {
-        if(jobRepository.findById(aLong).isEmpty()){
-            throw new NotFoundException("Job Not Found For ID value: " + aLong);
-        }
+        jobRepository.findById(aLong);
         return jobRepository.findById(aLong).orElse(null);
     }
 

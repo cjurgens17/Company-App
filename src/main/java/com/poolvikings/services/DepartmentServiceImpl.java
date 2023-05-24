@@ -40,9 +40,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 
     @Override
     public Department findById(Long aLong) {
-        if(departmentRepository.findById(aLong).isEmpty()){
-            throw new NotFoundException("Department Not Found For ID value: " + aLong);
-        }
+        departmentRepository.findById(aLong);
         return departmentRepository.findById(aLong).orElse(null);
     }
 
