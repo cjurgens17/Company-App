@@ -11,7 +11,7 @@ Pool Vikings is a website showcasing a company's most aspired projects, services
 
 ## Demo
 
-Check out the live demo of the Pool Vikings website at [https://pool-vikings.herokuapp.com/](https://pool-vikings.herokuapp.com/)
+Check out the live demo of the Pool Vikings website at [https://pool-vikings.herokuapp.com/](https://pool-vikings-93ebdbe246ba.herokuapp.com/)
 
 ## Bootstrap Template
 
